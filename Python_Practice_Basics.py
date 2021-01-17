@@ -57,13 +57,59 @@ def CalcArea(R):
     print("Area of Square: %.5f", pi*float (R)* float(R))
 
 def PrintPrime(R1,R2):
-    for i in range(R1,R2):
+    for i in range(int(R1),int(R2)):
         if i>1:
           for j in range(2,i):
                 if(i%j == 0):
                     break
                 else:
-                    print(i)
+                    print("Number is prime")
+
+def FindFibonacci( n):
+    a, b='0','1'
+    string = a +' '+ b
+    print(string)
+    if n == 0:
+        print("Fibonacci numbers are : ", n )
+    elif n == 1:
+        print("Fibanacci numbers are : ",n)
+    else:
+        for i in range(2, int(n)):
+            c = a + b 
+            a = b 
+            b = c 
+
+    print("Fibonacci numbers are :", c )
+
+def FindAsciiValue(n):
+    print("Ascii value of n is ", ord(n))
+
+def CalcSumOfSquares( n):
+    i, sum=0,0
+    if n==0 :
+        print("Sum of squares :  ", n)
+    elif n==1:
+        print("Sum of squares: ", n)
+    else:
+        while i <= int(n):
+            sum = int(sum) + ( i * i)
+            print(sum)
+            i=i+1
+                
+    print("SUM OF VALUES ARE:", sum)
+
+def CalcCubeOfNumbers(n):
+    i, sum=0,0
+    if n==0 :
+        print("Sum of squares :  ", n)
+    elif n==1:
+        print("Sum of squares: ", n)
+    else:
+        while i <= int(n):
+            sum = int(sum) + ( i * i * i)
+            i=i+1
+                
+    print("SUM OF VALUES ARE:", sum)
 
 def main():
     #add 2 numbers from input
@@ -92,9 +138,15 @@ def main():
     #Area of circle
     # Radius=input("Value for Radius")
     # CalcArea(Radius)
-    range1=input("Enter Range1")
-    range2=input("Enter Range2")
-    PrintPrime(range1,range2)
+    # range1=input("Enter Range1")
+    # range2=input("Enter Range2")
+    # PrintPrime(range1,range2)
+    n=input("Enter input value for n:  ")
+    # FindFibonacci(n)
+    # FindAsciiValue(n)
+    # CalcSumOfSquares( n)
+    CalcCubeOfNumbers(n)
+
 
 if __name__ == "__main__":
     main()
