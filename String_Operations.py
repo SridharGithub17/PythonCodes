@@ -1,5 +1,8 @@
 #/bin/usr/python
 #String operations
+import string
+import random
+import time
 
 def PalindromeCheck():
     string = input("Enter value of string:  ")
@@ -102,14 +105,81 @@ def TitleReplace():
             NewStr= NewStr + string[i].replace(string[i],"") 
     print("Final string without special charecter : ", NewStr)
     
+def PrintString():
+    string = input("Enter string:  ")
+    newStr =""
+    for i in range(len(string)):
+        if string[i]==" ":
+            print (newStr+'\n')
+            newStr=""
+        else:
+            newStr =  newStr + string[i]
+    print(newStr)
+
+import strgen
+def RandomStringGenerator():
+    letters = string.ascii_letters
+    LCaseLetter = string.ascii_lowercase
+    UCaseLetter = string.ascii_uppercase
+    result_str = random.choice(letters)
+    length = 8
+    result_LCstr = ''.join(random.choice(LCaseLetter) for i in range(length))
+    result_UCstr = ''.join(random.sample(UCaseLetter, length ))
+    print("New Strings  : ", result_str, result_LCstr, result_UCstr)
+    LettersDigits = string.ascii_letters + string.digits
+    resultMixString = ''.join( random.sample(LettersDigits, length))
+    print ("Mix String : ", resultMixString)
+    ##############################
+    randomString1 = strgen.StringGenerator("[\w\d]{5}").render()
+    randomString2 = strgen.StringGenerator("[\d]{3}&[\w]{3}&[\p]{3}").render()
+    print("New Random Strings  :", randomString1, randomString2)
+
+
+def CheckAllVowels():
+    string = input("Enter the string : ")
+    CaseA, CaseI, CaseO, CaseE, CaseU = 0,0,0,0,0
+    print("Length of string : ", len(string))
+    for i in range(len(string)):
+        if string[i].upper() == 'A':
+            CaseA =1
+        elif string[i].upper() == 'E':
+               CaseE =1
+        elif string[i].upper() == 'I':
+               CaseI =1
+        elif string[i].upper() == 'O':
+               CaseO =1
+        elif string[i].upper() == 'U':
+               CaseU =1
+        else:
+            continue
+    
+    print(CaseA, CaseI, CaseO, CaseE, CaseU)
+    if ( int(CaseA) + int(CaseE) + int(CaseI) + int(CaseO) + int(CaseU) ) == 5:
+        print("All the vowels are present ")
+    else:
+        print("All the vowels not present ")
+
+def ExecuteCode():
+    LOC ="""
+def prints():
+    return "sridhar"
+print(prints())
+print("sridhar das")
+         """
+    
+    exec(LOC)
 
 def main():
+    ExecuteCode()
+    # CheckAllVowels()
     # PalindromeCheck()
     # ReverseString()
     # RemoveCharString()
     # CheckSubString()
     # WordCount()
-    TitleReplace()
+    # TitleReplace()
+    # PrintString()
+    # RandomStringGenerator()
 
 if __name__ == "__main__":
     main()
