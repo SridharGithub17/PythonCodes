@@ -111,6 +111,11 @@ def FindLargestSmallest(stack):
     print("Large number :", large)
     print("Small number : ", small)
 
+def ListSorting(list1):
+    list1.sort()
+    print(list1)
+
+
 def main():
     # stack = [12, 35,'das' ,9, 56, 24,'hari'] 
     # ListOperations(stack,2,3 )
@@ -121,7 +126,8 @@ def main():
     # CumilativeSum(stack)
     # FindDuplicates(stack) --Check it more
     # PrintOddEven(stack)
-    FindLargestSmallest(stack)
+    # FindLargestSmallest(stack)
+    ListSorting(stack)
 
 
 if __name__ == "__main__":
