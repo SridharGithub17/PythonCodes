@@ -51,8 +51,59 @@ def DictMathOperations(dict):
     dict.update({'b':30000})
     print("Updated dictionary :", dict)
 
-def DictSorting(lis):
-    print(sorted(lis, key=itemgetter('age')))
+def DictSorting(dict1, dict2):
+    print(sorted(dict1,key=itemgetter()), dict2 )
+
+def MergeDict(lis1, lis2):
+    # print(lis1, lis2)
+    print(lis1.update(lis2))
+
+def DictFlattening(dict1):
+    dict2={}
+    list1=[]
+    list2=[]
+    for key, value in dict1.items():
+        if key == 'name':
+            list1=value
+        else:
+            list2=value
+    for i in range(len(list1)):
+        dict2[list2[i]] = list1[i]
+        # dict2[list1[i]]= list2[i]
+    print("New Dictionary : ", dict2)
+
+from collections import OrderedDict
+
+def DictOps(dict1):
+    print(dict1)
+    dict1.update({6:'June'})
+    print(dict1)
+    dict1.update({7:'July'})
+    dict1.move_to_end(7, last= False)
+    print(dict1)
+
+def FindWinner(votes):
+    print(votes)
+    count, large = 0, 0
+    dictWinner = {}
+    for i in range(len(votes)):
+        # print(vote[i])
+        for j in range(len(votes)):
+            if votes[i] == votes[j]:
+                count+= 1
+            else:
+                continue
+        dictWinner[votes[i]] = count 
+        count=0
+    print("Final Dictionary: ", dictWinner)
+    Winner, WinnerVoteCount  = 0, 0
+    for key, val in dictWinner.items():
+        if val >= WinnerVoteCount:
+            Winner = key 
+            WinnerVoteCount = val
+        else:
+            continue
+    print('Winner in the vote is {0} with vote count {1}'.format(Winner, WinnerVoteCount))
 
 
 def main():
@@ -66,10 +117,25 @@ def main():
     # DictionaryOperations(dict1)
     # TypeCheck(dict1)
     # DictMathOperations(dict2)
-    lis = [{ "name" : "Nandini", "age" : 20},  
+    lis1 = [{ "name" : "Nandini", "age" : 20},  
             { "name" : "Manjeet", "age" : 50 }, 
             { "name" : "Nikhil" , "age" : 19 }]
-    DictSorting(lis)
+    lis2 = [{ "name" : "Hari", "age" : 30},  
+            { "name" : "Ranga", "age" : 100 }, 
+            { "name" : "Rus" , "age" : 190 }]
+    # DictSorting(lis)
+    # MergeDict(dict1, dict2)
+    DictOrig={'name': ['Jan', 'Feb', 'March'], 'month': [1, 2, 3]}
+    # Expected  OUtput: Flattened dictionary : {1: ‘Jan’, 2: ‘Feb’, 3: ‘March’}
+    # DictFlattening(DictOrig)
+    dict1= OrderedDict({1: 'Jan', 2: 'Feb', 3: 'March', 4: 'April'})
+    # DictOps(dict1)
+    votes = ["john", "johnny", "jackie",
+                    "johnny", "john", "jackie", 
+                    "jamie", "jamie", "john",
+                    "johnny", "jamie", "johnny", 
+                    "john"]
+    FindWinner(votes)
 
 if __name__ == "__main__":
     main()
