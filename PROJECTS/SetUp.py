@@ -4,7 +4,7 @@ import random
 
 base = None    
 
-executables = [Executable("GuessNumber.py", base=base)]
+executables = [Executable("MasterMind.py", base=base)]
 
 packages = ["idna"]
 options = {
