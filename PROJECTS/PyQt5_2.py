@@ -26,28 +26,29 @@ class Mainwindow(QMainWindow):
         extractAction = QAction(QIcon('Quit.jpg'),'Quit',self)
         extractAction.triggered.connect(self.closeApplication)
 
-        #OPen file tab
-        openFile = QAction('&OpenFile',self)
-        openFile.setShortcut('CTRL+O')
-        openFile.setStatusTip('OpenFile')
-        openFile.triggered.connect(self.openFile)
-
-        #Save file 
-        saveFile = QAction('&SaveFile',self)
-        saveFile.setShortcut('CTRL+S')
-        saveFile.setStatusTip('Save File')
-        saveFile.triggered.connect(self.fileSave)
-
-        self.statusBar()
-
         #Main menu creation 
         mainManu = self.menuBar()
         fileMenu = mainManu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
+        #OPen file tab
+        openFile = QAction('&OpenFile',self)
+        openFile.setShortcut('CTRL+O')
+        openFile.setStatusTip('OpenFile')
+        openFile.triggered.connect(self.openFile)
         fileMenu.addAction(openFile)
+
+
+        #Save file 
+        saveFile = QAction('&SaveFile',self)
+        saveFile.setShortcut('CTRL+S')
+        saveFile.setStatusTip('Save File')
+        saveFile.triggered.connect(self.fileSave)        
         fileMenu.addAction(saveFile)
 
+        self.statusBar()
+
+        
         #Add Toolbar section 
         self.toolBar = self.addToolBar('Extraction')
         self.toolBar.addAction(extractAction)
