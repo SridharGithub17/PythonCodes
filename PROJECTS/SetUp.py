@@ -4,7 +4,7 @@ import random
 
 base = None    
 
-executables = [Executable("MasterMind.py", base=base)]
+executables = [Executable("Contacts.py", base=base)]
 
 packages = ["idna"]
 options = {
