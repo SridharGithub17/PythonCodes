@@ -140,7 +140,6 @@ class Mainwindow(QMainWindow):
     def colorPicker(self):
         color = QColorDialog.getColor()
         self.styleChoise.setStyleSheet('QWidget{background-color:%s}'%color.name())
-        self.styleChoise.setStyleSheet('QWidget{foreground-color:%s}'%color.name())
 
 
     def style_Choise(self,text):

@@ -1,0 +1,15 @@
+#Contact List help document
+It contains the below operations:
+
+1. Add New
+2. Edit existing contact
+3. Delete contact
+4. Copy contact
+5. Share contact
+6. Upload contact
+7. Send Text
+8. Call contact
+9. Show All contact
+10. Backup contacts
+11. Remove duplicates
+12. View contacts
