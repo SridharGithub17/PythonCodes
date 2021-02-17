@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import sys
+import sys , os
 from PyQt5.QtGui import *
 from PyQt5.QtCore import QCoreApplication, Qt 
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QGridLayout
@@ -91,8 +91,8 @@ class WindowDesign(QMainWindow):
         btn15.move(185,175)
         btn15.setStatusTip('=')
         #Click activities on the buttons
-        if btn1.clicked.connect():
-            self.btn.setText('1')
+        # if btn1.clicked.connect(self):
+        #     self.btn.setText('1')
 
             
 
@@ -130,7 +130,7 @@ class WindowDesign(QMainWindow):
         Help.triggered.connect(self.getHelp)
     
     def getHelp(self):
-        print("Help Document")
+        os.startfile(r'Help.txt')
 
     def copyItem(self):
         print('Item Copied')

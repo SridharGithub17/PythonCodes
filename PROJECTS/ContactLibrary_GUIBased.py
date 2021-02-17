@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QFontDialog
 from PyQt5.QtWidgets import  QColorDialog, QCalendarWidget
 from PyQt5.QtWidgets import QTextEdit, QInputDialog, QFileDialog, QLineEdit
 from PyQt5.QtWidgets import QToolBar, QVBoxLayout
-from PyQt5.QtWidgets import QFrame, QHBoxLayout
+from PyQt5.QtWidgets import QFrame, QHBoxLayout, QFormLayout,QLayout
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -127,7 +127,6 @@ class MainWindow(QMainWindow):
         ComboBox.move(20,40)  #size
         ComboBox.activated[str].connect(self.style_Choise)
         #Frame for the box
-        hbox = QHBoxLayout()
         frame = QFrame(self)
         frame.setFrameShape(QFrame.StyledPanel)
         frame.setLineWidth(10)
@@ -135,7 +134,9 @@ class MainWindow(QMainWindow):
         frame.resize(200, 400)
         frame.move(280,90)
         frame.setStyleSheet(".QFrame { background-color : white } ")
-        hbox.addWidget(frame)
+        formLayout = QFormLayout()
+        formLayout.addWidget(frame)
+        self.setLayout(formLayout)
         #Buttons
         btn1 = QPushButton('AddNew',self)
         btn1.resize(75,50)
@@ -194,7 +195,9 @@ class MainWindow(QMainWindow):
         btn5.clicked.connect(self.showAllContacts)
     
     def showAllContacts(self):
-        print("Output to frame")
+        print("Print all")
+        formLayout.addRow(QLabel("city 1"), QLabel("delhi"))
+        formLayout.addRow(QLabel("city 1"), QLabel("delhi"))
         # cur = conObj.cursor()
         # cur.execute("SELECT DISTINCT SEQ_NO, FIRST_NAME, MIDDLE_NAME, LAST_NAME FROM CONTACTS ;")
         # rows = cur.fetchall()

@@ -83,7 +83,8 @@ def connectDB(dbFile):
         print(e)
     # finally:
     #     if conn:
-   #         conn.close()    
+   #         conn.close() 
+   #    
 def closeConnect(conn):
     if conn:
         conn.close()
