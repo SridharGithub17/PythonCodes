@@ -3,8 +3,10 @@ import numpy as np
 
 def NumPy_Test():    
     try:
-        a=np.array([1, 2, 3.0]) 
+        a=np.array([1, 2, 3], dtype=complex)
         print(a)
+
+        print(a[0])
 
     except ZeroDivisionError: 
         print('There is some issue in the try block')
